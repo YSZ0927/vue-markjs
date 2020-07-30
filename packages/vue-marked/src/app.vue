@@ -1,8 +1,11 @@
-<template>
-	<h1>Hello Vue 3!asdfasdf</h1>
-    <div v-html="markHtml"></div>
-	<textarea  v-model="markStr" class="mark-text"></textarea>
-	
+<template class="asdf">
+	<div>
+		<button>发布</button>
+	</div>
+	<div class="edit-area">
+		<textarea  v-model="markStr" class="mark-text"></textarea>
+		<div class="html-show" v-html="markHtml"></div>
+	</div>
 </template>
 
 <script>
@@ -33,9 +36,19 @@
 	h1 {
 		font-family: Arial, Helvetica, sans-serif;
 	}
-	.mark-text {
-		width: 200px;
-		height: 600px;
+	.edit-area {
+		display: flex;
 	}
-
+	.mark-text {
+		width: 50;
+		height: calc(100vh - 100px);
+		background: #333;
+		flex: 1;
+		color: antiquewhite;
+	}
+	.html-show {
+		width: 600px;
+		border: 1px solid #ccc;
+	}
+	
 </style>
