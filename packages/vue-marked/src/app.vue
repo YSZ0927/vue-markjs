@@ -1,25 +1,26 @@
 <template>
 	<h1>Hello Vue 3!asdfasdf</h1>
-	<button @click="inc">Clicked {{ count }} times.</button>
     <div v-html="markHtml"></div>
+	<textarea  v-model="markStr" class="mark-text"></textarea>
+	
 </template>
 
 <script>
-	import { ref } from "vue";
+	import { ref, watch } from "vue";
 	import marked from "marked";
+	
 	export default {
 		setup() {
-			console.log(marked);
-            const count = ref(0);
-            const markHtml = ref('')
-			const inc = () => {
-                count.value++;
-			    markHtml.value = marked("# Marked in the browser\n\nRendered by **marked**.");
-			};
+			const markHtml = ref('')
+			const markStr = ref('')
+
+			watch(markStr, val => {
+				markHtml.value = marked(val)
+			})
+
 			return {
-				count,
-                inc,
-                markHtml,
+				markHtml,
+				markStr,
 			};
 		},
 	};
@@ -32,4 +33,9 @@
 	h1 {
 		font-family: Arial, Helvetica, sans-serif;
 	}
+	.mark-text {
+		width: 200px;
+		height: 600px;
+	}
+
 </style>
