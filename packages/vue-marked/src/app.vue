@@ -1,5 +1,6 @@
-<template class="asdf">
-	<div>
+<template>
+	<div class="header">
+		<input type="text" placeholder="输入文章标题">
 		<button>发布</button>
 	</div>
 	<div class="edit-area">
@@ -30,25 +31,25 @@
 </script>
 
 <style scoped>
-	img {
-		width: 200px;
-	}
-	h1 {
-		font-family: Arial, Helvetica, sans-serif;
+	.header{
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 0;
 	}
 	.edit-area {
 		display: flex;
 	}
 	.mark-text {
-		width: 50;
+		width: 50%;
 		height: calc(100vh - 100px);
 		background: #333;
-		flex: 1;
 		color: antiquewhite;
+		padding: 20px
 	}
 	.html-show {
-		width: 600px;
+		width: 50%;
 		border: 1px solid #ccc;
+		padding: 20px;
 	}
 	
 </style>
