@@ -30,11 +30,15 @@
 	};
 </script>
 
-<style scoped>
+<style scoped lang="less">
 	.header{
 		display: flex;
 		justify-content: space-between;
 		padding: 10px 0;
+		input {
+			line-height: 30px;
+			border-radius: 2px;
+		}
 	}
 	.edit-area {
 		display: flex;
